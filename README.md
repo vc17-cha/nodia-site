@@ -3,8 +3,8 @@
 Deux pages statiques, sans dépendance ni traçage : une page de présentation et
 la politique de confidentialité exigée par les boutiques d'extensions.
 
-- **Présentation** — <https://vc17-cha.github.io/nodia/>
-- **Confidentialité** — <https://vc17-cha.github.io/nodia/confidentialite.html>
+- **Présentation** — <https://vc17-cha.github.io/nodia-site/>
+- **Confidentialité** — <https://vc17-cha.github.io/nodia-site/confidentialite.html>
 
 C'est cette seconde adresse qu'il faut déclarer au Chrome Web Store et à Edge
 Add-ons.
