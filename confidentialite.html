@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Politique de confidentialité — EdgeProspect</title>
+<meta name="description" content="Politique de confidentialité d'EdgeProspect : aucune donnée ne quitte votre ordinateur.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <span class="mark" aria-hidden="true">⚡</span>
+    <div>
+      <div class="brand"><a href="index.html" style="color:inherit;text-decoration:none">EdgeProspect</a></div>
+      <p class="tagline">Politique de confidentialité</p>
+    </div>
+  </header>
+
+  <h1>Politique de confidentialité</h1>
+  <p class="stamp">Dernière mise à jour : 22 septembre 2026 · Version 1.6.0</p>
+
+  <p class="lead">
+    EdgeProspect est une extension de navigateur qui aide un commercial à
+    qualifier ses prospects sur LinkedIn. Elle a été conçue pour fonctionner
+    sans serveur : <strong>vos données ne quittent pas votre ordinateur.</strong>
+  </p>
+
+  <h2>En résumé</h2>
+  <table>
+    <thead><tr><th>Question</th><th>Réponse</th></tr></thead>
+    <tbody>
+      <tr><td>L'extension collecte-t-elle des données ?</td><td>Uniquement celles que vous saisissez ou enregistrez vous-même.</td></tr>
+      <tr><td>Ces données sont-elles envoyées quelque part ?</td><td>Non. Elles restent dans le stockage local de votre navigateur.</td></tr>
+      <tr><td>Y a-t-il des statistiques d'usage, de l'analytique, du traçage ?</td><td>Non, aucun.</td></tr>
+      <tr><td>Des données sont-elles vendues ou partagées ?</td><td>Non, jamais.</td></tr>
+      <tr><td>Y a-t-il un compte à créer ?</td><td>Non.</td></tr>
+      <tr><td>Du code est-il téléchargé à distance ?</td><td>Non. Tout le code est contenu dans l'extension.</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Données traitées</h2>
+  <p>Lorsque vous enregistrez un prospect, l'extension conserve localement :</p>
+  <ul>
+    <li>le nom de l'entreprise affichée sur la page LinkedIn consultée ;</li>
+    <li>les données légales publiques renvoyées par l'API Recherche Entreprises
+      (SIREN, SIRET, code NAF, adresse du siège, commune) ;</li>
+    <li>les informations de qualification que vous saisissez : contexte du
+      besoin, timing, priorité, date de relance ;</li>
+    <li>le prénom et le nom du contact, si vous choisissez de les renseigner ;</li>
+    <li>l'adresse de la page LinkedIn consultée et la date d'enregistrement.</li>
+  </ul>
+  <p>
+    Lorsque vous lancez une recherche de décideur, l'extension conserve en plus
+    un <strong>brouillon temporaire</strong> — l'entreprise en cours de
+    prospection et sa qualification — afin de vous le proposer sur la page
+    suivante. Ce brouillon reste local, expire au bout de deux heures, et
+    disparaît dès que le prospect est enregistré ou que vous cliquez sur
+    « Abandonner ».
+  </p>
+  <p>
+    L'extension ne lit ni vos messages, ni vos contacts, ni votre profil, ni
+    aucune partie de LinkedIn autre que le nom d'entreprise affiché sur la page
+    ouverte.
+  </p>
+
+  <h2>Où ces données sont stockées</h2>
+  <p>
+    Dans <code>chrome.storage.local</code>, l'espace de stockage local de votre
+    navigateur, sur votre machine. Cet espace :
+  </p>
+  <ul>
+    <li>n'est accessible qu'à cette extension ;</li>
+    <li>n'est <strong>pas</strong> synchronisé entre vos appareils ;</li>
+    <li>est <strong>entièrement supprimé</strong> lorsque vous désinstallez
+      l'extension.</li>
+  </ul>
+
+  <h2>Requêtes réseau sortantes</h2>
+  <p>
+    EdgeProspect n'émet qu'un seul type de requête, et uniquement quand vous
+    cliquez sur « Analyser l'entreprise » :
+  </p>
+  <pre><code>GET https://recherche-entreprises.api.gouv.fr/search?q=&lt;nom d'entreprise&gt;</code></pre>
+  <p>
+    Cette API publique et gratuite est opérée par la Direction
+    interministérielle du numérique (DINUM, gouvernement français).
+    <strong>Seul le nom de l'entreprise est transmis</strong> — aucun
+    identifiant, aucune donnée personnelle, aucune information sur vous ou sur
+    votre navigation. Conditions de l'API :
+    <a href="https://recherche-entreprises.api.gouv.fr/docs/">recherche-entreprises.api.gouv.fr/docs</a>.
+  </p>
+  <p>
+    Aucune autre requête n'est émise vers aucun autre serveur, y compris ceux
+    de l'auteur de l'extension.
+  </p>
+
+  <h2>Permissions demandées et pourquoi</h2>
+  <table>
+    <thead><tr><th>Permission</th><th>Usage</th></tr></thead>
+    <tbody>
+      <tr><td><code>storage</code></td><td>Enregistrer vos prospects et votre préférence d'ouverture automatique, localement.</td></tr>
+      <tr><td><code>scripting</code></td><td>Réinstaller l'interface dans un onglet LinkedIn déjà ouvert au moment de l'installation ou d'une mise à jour, sans vous obliger à recharger la page.</td></tr>
+      <tr><td><code>https://*.linkedin.com/*</code></td><td>Afficher la barre latérale et lire le nom de l'entreprise sur la page consultée.</td></tr>
+      <tr><td><code>https://recherche-entreprises.api.gouv.fr/*</code></td><td>Interroger l'API légale publique.</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Vos droits et vos moyens d'action</h2>
+  <ul>
+    <li><strong>Consulter</strong> vos données : la fenêtre de l'extension liste
+      vos derniers prospects.</li>
+    <li><strong>Exporter</strong> : le bouton « Exporter vers Excel » produit un
+      fichier CSV de l'intégralité de vos données.</li>
+    <li><strong>Supprimer</strong> : le bouton « Réinitialiser » vide la liste.
+      La désinstallation de l'extension efface tout.</li>
+  </ul>
+  <p>
+    Aucune de ces données n'étant transmise à l'auteur, il n'existe aucune copie
+    ailleurs que sur votre machine — et donc aucune demande d'effacement à
+    adresser à qui que ce soit.
+  </p>
+
+  <h2>Données sensibles</h2>
+  <p>
+    EdgeProspect ne traite ni données de santé, ni données financières, ni
+    données d'authentification, ni contenu de communications personnelles.
+  </p>
+
+  <h2>Modifications</h2>
+  <p>
+    Toute évolution de cette politique sera publiée sur cette page, avec mise à
+    jour de la date en en-tête. Un changement affectant le traitement des
+    données s'accompagnera d'une note dans les notes de version de l'extension.
+  </p>
+
+  <h2>Contact</h2>
+  <p>
+    Pour toute question : ouvrir une issue sur le dépôt du projet, ou écrire à
+    l'auteur.
+  </p>
+
+  <footer>
+    <p><a href="index.html">← Retour</a></p>
+  </footer>
+
+</div>
+</body>
+</html>
